@@ -1,0 +1,2 @@
+# EcomBI-Academy-End-to-End-Ecommerce-BI-Data-Engineering-Project
+EcomBI Academy is a hands-on project designed to showcase a complete Business Intelligence (BI) and Data Engineering pipeline for a simulated ecommerce platform. It walks through every step from raw data ingestion to final dashboarding and advanced analytics — making it perfect for BI analysts, data engineers, and aspiring data professionals.
