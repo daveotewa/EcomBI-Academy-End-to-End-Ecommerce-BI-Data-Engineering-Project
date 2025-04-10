@@ -1,151 +1,89 @@
-# EcomBI-Academy-End-to-End-Ecommerce-BI-Data-Engineering-Project
-EcomBI Academy is a hands-on project designed to showcase a complete Business Intelligence (BI) and Data Engineering pipeline for a simulated ecommerce platform. It walks through every step from raw data ingestion to final dashboarding and advanced analytics — making it perfect for BI analysts, data engineers, and aspiring data professionals.
+# 🛒 Ecommerce BI Dashboard Project
 
-## 🎯 Project Objective
-The **EcomBI Academy** project aims to simulate a real-world ecommerce data ecosystem and build an end-to-end Business Intelligence solution. The goal is to demonstrate practical expertise in the full data pipeline — from raw data ingestion and transformation, to insightful reporting and predictive analytics. This project is designed to showcase essential skills for BI Analysts, Data Engineers, and Data Scientists, while also serving as a practical learning guide for aspiring data professionals.
-
-This project covers:
-- Creating normalized database schemas for ecommerce data
-- Designing and automating ETL workflows using Python
-- Performing data transformation and aggregation with SQL
-- Building actionable BI dashboards using Power BI or Tableau
-- Optionally deploying ML models and APIs for advanced insights
+This project is a full-stack **Business Intelligence** solution for an e-commerce platform. It showcases how to collect, transform, analyze, and visualize data using SQL, Python, and Power BI.
 
 ---
 
-## 🧩 Project Modules (Expanded)
+## 📦 Project Components
 
-### **1. Raw Data Simulation or Import**
-**Objective:** Gather a working dataset that mimics real ecommerce activity.
-
-**Steps:**
-- Download from Kaggle (e.g., [Ecommerce Behavior Dataset](https://www.kaggle.com/datasets/mkechinov/ecommerce-behavior-data-from-multi-category-store))
-- OR generate synthetic ecommerce data using Python + Faker
-- Include tables like:
-  - Customers
-  - Orders
-  - Order_Items
-  - Products
-  - Payments
-  - Shipping
-
-**Skills:** Data sourcing, data understanding, data modeling basics
+| Tool         | Purpose                           |
+|--------------|-----------------------------------|
+| PostgreSQL   | Data storage & SQL transformations |
+| Python       | ETL pipeline (load/clean CSVs)    |
+| Power BI     | Interactive dashboards & reports  |
+| Excel/CSV    | Source data files                 |
 
 ---
 
-### **2. ETL Pipeline with Python**
-**Objective:** Clean, transform, and load raw data into a SQL database.
+## 📁 Dataset Overview
 
-**Steps:**
-1. **Set up environment**
-   - Use a virtual environment (e.g., `venv`) and install required packages: `pandas`, `sqlalchemy`, `psycopg2` or `mysql-connector-python`, `os`, `dotenv`.
+We worked with 4 key tables, each with >1,000 rows:
 
-2. **Data Cleaning with pandas**
-   - Read CSV or JSON files into DataFrames
-   - Remove duplicates, handle missing values (e.g., imputation, dropping)
-   - Format dates, standardize strings (e.g., product names)
+- `customers`
+- `orders`
+- `payments`
+- `products`
 
-3. **Normalize Data**
-   - Separate into key tables:
-     - `Customers`: customer_id, name, email, join_date, region
-     - `Products`: product_id, name, category, price, inventory_count
-     - `Orders`: order_id, customer_id, order_date, shipping_cost, status
-     - `Order_Items`: item_id, order_id, product_id, quantity, item_total
-     - `Payments`: payment_id, order_id, method, payment_date, amount
-
-4. **Database Integration**
-   - Define SQLAlchemy models or use raw SQL `CREATE TABLE` statements
-   - Connect to PostgreSQL/MySQL using SQLAlchemy engine
-   - Load cleaned DataFrames using `to_sql()` or INSERT statements
-
-5. **Orchestration**
-   - Automate script with `os` and `logging`
-   - Add `.env` file to securely store DB credentials
-   - Optional: schedule job using `cron` or `schedule` module
-
-**Skills:** ETL design, data wrangling, SQL database integration, Python scripting
+Optional: An `order_items` table can be used for product-level analysis.
 
 ---
 
-### **3. SQL for Data Transformation**
-**Objective:** Turn raw data into analytical insights using SQL.
+## ⚙️ ETL Workflow (Python)
 
-**Steps:**
-- Write SQL scripts to:
-  - Aggregate sales by product, category, region
-  - Create monthly revenue & customer retention tables
-  - Use window functions to track customer order frequency
-  - Create CTEs and views to simplify analysis
+Python scripts were used to:
 
-**Skills:** Advanced SQL, relational logic, data modeling for reporting
+1. Load CSVs into PostgreSQL
+2. Create clean schema and tables
+3. Build materialized summary tables:
+   - `monthly_revenue_summary`
+   - `revenue_by_method`
+   - `top_customers`
 
----
-
-### **4. Dashboarding with Power BI / Tableau**
-**Objective:** Visualize key business metrics in an interactive dashboard.
-
-**Steps:**
-- Connect Power BI/Tableau to the cleaned database
-- Build dashboards for:
-  - Executive Summary (revenue, orders, top products)
-  - Customer Insights (segmentation, order frequency)
-  - Marketing Performance (acquisition channels, conversion rates)
-
-**Skills:** BI tools, visualization best practices, dashboard storytelling
+All SQL scripts are located in the `/sql/` directory.
 
 ---
 
-### **5. Python for Automation**
-**Objective:** Automate data ingestion and ETL using Python.
+## 📊 Dashboards (Power BI)
 
-**Steps:**
-- Use Python scripts with `schedule`, `time`, `logging`, and `os` modules
-- Connect to a public API (e.g., for currency rates)
-- Automate ETL job daily using `cron` or Windows Task Scheduler
+### 1. 📆 Monthly Revenue
 
-**Skills:** Workflow orchestration, API integration, logging & error handling
+- Measures: `total_orders`, `total_revenue`
+- Aggregated by month
+- Filterable by status
 
----
+### 2. 💳 Revenue by Payment Method
 
-### **6. Advanced Analytics / ML Model**
-**Objective:** Add predictive analytics to drive insights.
+- Visual: Bar chart
+- Fields: `method`, `total_revenue`
+- Features: consistent color scheme, tooltips, filters
 
-**Steps:**
-- Segment customers using KMeans clustering (based on RFM analysis)
-- Forecast monthly sales with linear regression or ARIMA
-- Save model with `joblib`
-- Serve predictions via a Flask API
-- Connect output to Power BI via Python script
+### 3. 👤 Top Customers
 
-**Skills:** Machine Learning, Flask deployment, API consumption, model monitoring
+- Visual: Top N bar chart
+- Metric: total amount spent
+- Sort: descending by revenue
 
 ---
 
-## 🧠 Bonus Suggestions:
-- Add `pytest` for automated data test cases
-- Create a Docker container for the entire project
-- Deploy PostgreSQL + Flask app on cloud (Heroku, Render, Railway)
-- Write blog/tutorials to share your learning
+## 📌 How to Use
+
+1. Clone this repo
+2. Set up PostgreSQL and run the scripts in `/sql/`
+3. Open Power BI and connect to the PostgreSQL database
+4. Explore the dashboards!
 
 ---
 
-## 🖼️ GitHub Repo Suggestions:
-- **/data/**: sample datasets
-- **/etl/**: Python scripts for transformation
-- **/sql/**: SQL scripts & views
-- **/dashboards/**: PBIX or Tableau files
-- **/ml/**: Model training & deployment
-- **/docs/**: README, architecture diagrams, tutorial notebooks
+## ✅ Future Improvements
+
+- Add `order_items` table for product-level insights
+- Add calculated fields (e.g. AOV, CLV)
+- Publish dashboards to Power BI Service
 
 ---
 
-## 👤 Author
-**David Otewa**  
-📧 dotewa@gmail.com  
-🔗 [GitHub Portfolio](https://github.com/daveotewa)
+## 🧠 Author
 
----
-
-## 📜 License
-This project is licensed under the MIT License — feel free to use, fork, and build on it!
-
+**Anita Musyoka**  
+BI/Analytics Enthusiast | Nutrition & Public Health  
+[LinkedIn](#) | [Portfolio](#)  
