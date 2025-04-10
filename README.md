@@ -51,17 +51,25 @@ All SQL scripts are located in the `/sql/` directory.
 - Aggregated by month
 - Filterable by status
 
+![image](https://github.com/user-attachments/assets/dd1786c6-3d36-475e-af34-064411efb60b)
+
+
 ### 2. 💳 Revenue by Payment Method
 
 - Visual: Bar chart
 - Fields: `method`, `total_revenue`
 - Features: consistent color scheme, tooltips, filters
 
+![image](https://github.com/user-attachments/assets/4fecc11f-3dce-4539-b0a6-4467a11ae87d)
+
+
 ### 3. 👤 Top Customers
 
 - Visual: Top N bar chart
 - Metric: total amount spent
 - Sort: descending by revenue
+
+![image](https://github.com/user-attachments/assets/afbbadab-7024-4bde-b322-9e68371efd24)
 
 ---
 
@@ -84,6 +92,6 @@ All SQL scripts are located in the `/sql/` directory.
 
 ## 🧠 Author
 
-**Anita Musyoka**  
-BI/Analytics Enthusiast | Nutrition & Public Health  
-[LinkedIn](#) | [Portfolio](#)  
+**David Otewa**  
+Data Analyst
+
