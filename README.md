@@ -51,7 +51,8 @@ All SQL scripts are located in the `/sql/` directory.
 - Aggregated by month
 - Filterable by status
 
-![image](https://github.com/user-attachments/assets/dd1786c6-3d36-475e-af34-064411efb60b)
+![image](https://github.com/user-attachments/assets/f3fbd0ce-817e-42fd-be83-1b3482de4435)
+
 
 
 ### 2. 💳 Revenue by Payment Method
@@ -60,7 +61,8 @@ All SQL scripts are located in the `/sql/` directory.
 - Fields: `method`, `total_revenue`
 - Features: consistent color scheme, tooltips, filters
 
-![image](https://github.com/user-attachments/assets/4fecc11f-3dce-4539-b0a6-4467a11ae87d)
+![image](https://github.com/user-attachments/assets/d66255e6-20fb-4bbe-8c0d-ac21e27f1287)
+
 
 
 ### 3. 👤 Top Customers
@@ -69,7 +71,8 @@ All SQL scripts are located in the `/sql/` directory.
 - Metric: total amount spent
 - Sort: descending by revenue
 
-![image](https://github.com/user-attachments/assets/afbbadab-7024-4bde-b322-9e68371efd24)
+![image](https://github.com/user-attachments/assets/d7e66a0c-d2f3-4451-a831-8be7b2f9f1fe)
+
 
 ---
 
